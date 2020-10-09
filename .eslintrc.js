@@ -3,6 +3,9 @@ module.exports = {
     browser: true,
     es2021: true,
   },
+  globals: {
+    Position: true,
+  },
   extends: [
     'plugin:react/recommended',
     'airbnb',
@@ -26,5 +29,18 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
     'react/prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'import/extensions': [
+      'error',
+      {
+        ts: 'never',
+        tsx: 'never',
+        json: 'always',
+      },
+    ],
+  },
+  settings: {
+    'import/resolver': {
+      typescript: {},
+    },
   },
 };
