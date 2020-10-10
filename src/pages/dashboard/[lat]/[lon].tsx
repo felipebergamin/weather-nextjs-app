@@ -1,16 +1,15 @@
 import { GetServerSideProps } from 'next';
-import { Grow } from '@material-ui/core';
+import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
+import { NavigateNext, NavigateBefore } from '@material-ui/icons';
 
-import { CenterContent } from '@styles/Dashboard';
 import api from '~/services/api';
+import { CarouselButtonNext, CarouselButtonBack } from '~/styles/Dashboard';
 import {
   AppBar,
   Toolbar,
   Typography,
   Container,
-  CardContent,
-  CardMedia,
-  Card,
   Grid,
   ForecastDay,
 } from '~/components';
@@ -33,7 +32,7 @@ function CurrentWeather({ current, forecast }) {
         </Toolbar>
       </AppBar>
 
-      <Container maxWidth="md" style={{ paddingTop: '1.5rem' }}>
+      <Container maxWidth="md" style={{ paddingTop: '1.5rem', height: '100%' }}>
         <Typography variant="h5">
           Current weather at {cityName}, {country}
         </Typography>
@@ -67,11 +66,37 @@ function CurrentWeather({ current, forecast }) {
           </Grid>
         </Grid>
 
-        <Grid container spacing={1}>
-          {forecast.list.map((data) => (
-            <ForecastDay key={String(data.dt)} data={data} />
-          ))}
-        </Grid>
+        <CarouselProvider
+          naturalSlideHeight={300}
+          naturalSlideWidth={200}
+          totalSlides={forecast.list.length}
+          visibleSlides={5}
+          infinite={false}
+        >
+          <Grid container direction="row">
+            <Grid item container xs={1} alignItems="center" justify="center">
+              <CarouselButtonBack>
+                <NavigateBefore />
+              </CarouselButtonBack>
+            </Grid>
+
+            <Grid item xs={10}>
+              <Slider>
+                {forecast.list.map((data, index) => (
+                  <Slide index={index} key={String(data.dt)}>
+                    <ForecastDay data={data} />
+                  </Slide>
+                ))}
+              </Slider>
+            </Grid>
+
+            <Grid item container xs={1} alignItems="center" justify="center">
+              <CarouselButtonNext>
+                <NavigateNext />
+              </CarouselButtonNext>
+            </Grid>
+          </Grid>
+        </CarouselProvider>
       </Container>
     </>
   );

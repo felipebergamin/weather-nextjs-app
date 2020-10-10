@@ -1,4 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { ButtonBack, ButtonNext } from 'pure-react-carousel';
+
 import { Card } from '~/components';
 
 export const HorizontalCard = styled(Card)`
@@ -12,4 +14,17 @@ export const CenterContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+const BaseCarouselButton = css`
+  background: transparent;
+  border: none;
+`;
+
+export const CarouselButtonNext = styled(ButtonNext)`
+  ${BaseCarouselButton}
+`;
+
+export const CarouselButtonBack = styled(ButtonBack)`
+  ${BaseCarouselButton}
 `;
