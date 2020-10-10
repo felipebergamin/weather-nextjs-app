@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   globals: {
     Position: true,
@@ -26,6 +27,8 @@ module.exports = {
     'prettier/prettier': 'error',
     // suppress errors for missing 'import React' in files for nextjs
     'react/react-in-jsx-scope': 'off',
+    // api data comes with underscores
+    camelcase: 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
     'react/prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
