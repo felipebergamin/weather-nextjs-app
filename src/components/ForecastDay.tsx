@@ -14,7 +14,7 @@ function ForecastDay({ data }) {
 
   return (
     <Card style={{ margin: '0.25rem' }}>
-      <CardContent>
+      <CardContent style={{ display: 'flex', flexDirection: 'column' }}>
         <CardMedia
           style={{
             width: '100%',
@@ -23,7 +23,16 @@ function ForecastDay({ data }) {
           }}
           image={`${IMG_BASE}/${data.weather[0].icon}@4x.png`}
         />
-        <Typography variant="body1">{formattedDay}</Typography>
+        <Typography variant="body1">
+          <strong>{formattedDay}</strong>
+        </Typography>
+        <Typography variant="caption">
+          Temperature: {data.main.temp} &#8457;
+        </Typography>
+        <Typography variant="caption">
+          Feels like: {data.main.feels_like} &#8457;
+        </Typography>
+        <Typography variant="caption">Humidity: {data.main.temp}%</Typography>
       </CardContent>
     </Card>
   );

@@ -38,7 +38,14 @@ function CurrentWeather({ current, forecast }) {
         </Typography>
 
         <Grid container>
-          <Grid item container xs={12} md={6} alignItems="center">
+          <Grid
+            item
+            container
+            xs={12}
+            md={6}
+            alignItems="center"
+            justify="center"
+          >
             <img
               draggable="false"
               src={`${IMG_BASE}/${weather[0].icon}@4x.png`}
@@ -48,6 +55,9 @@ function CurrentWeather({ current, forecast }) {
             <div>
               <Typography variant="h6">{weather[0].main}</Typography>
               <Typography variant="body1">{weather[0].description}</Typography>
+              <Typography variant="caption">
+                Humidity {main.humidity}%
+              </Typography>
             </div>
           </Grid>
 
@@ -57,20 +67,24 @@ function CurrentWeather({ current, forecast }) {
             xs={12}
             md={6}
             direction="column"
+            alignItems="center"
             justify="center"
           >
             <Typography variant="h3">{main.temp} &#8457;</Typography>
             <Typography variant="body2">
               Min: {main.temp_min} &#8457; / Max: {main.temp_max} &#8457;
             </Typography>
+            <Typography variant="caption">
+              Feels like {main.feels_like} &#8457;
+            </Typography>
           </Grid>
         </Grid>
 
         <CarouselProvider
-          naturalSlideHeight={300}
+          naturalSlideHeight={240}
           naturalSlideWidth={200}
           totalSlides={forecast.list.length}
-          visibleSlides={5}
+          visibleSlides={3}
           infinite={false}
         >
           <Grid container direction="row">
