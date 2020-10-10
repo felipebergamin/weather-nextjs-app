@@ -12,17 +12,18 @@ import {
   CardMedia,
   Card,
   Grid,
+  ForecastDay,
 } from '~/components';
 
 const IMG_BASE = process.env.NEXT_PUBLIC_ICONS_BASE_URL;
 
-function CurrentWeather(props) {
+function CurrentWeather({ current, forecast }) {
   const {
     name: cityName,
     sys: { country },
     weather,
     main,
-  } = props;
+  } = current;
 
   return (
     <>
@@ -65,6 +66,12 @@ function CurrentWeather(props) {
             </Typography>
           </Grid>
         </Grid>
+
+        <Grid container spacing={1}>
+          {forecast.list.map((data) => (
+            <ForecastDay key={String(data.dt)} data={data} />
+          ))}
+        </Grid>
       </Container>
     </>
   );
@@ -73,7 +80,16 @@ function CurrentWeather(props) {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { lat, lon } = context.query;
 
-  const { data } = await api.get('weather', {
+  const { data: currentData } = await api.get('weather', {
+    params: {
+      lat,
+      lon,
+      appid: process.env.API_KEY,
+      units: 'imperial',
+    },
+  });
+
+  const { data: forecastData } = await api.get('forecast', {
     params: {
       lat,
       lon,
@@ -83,7 +99,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   });
 
   return {
-    props: data,
+    props: {
+      current: currentData,
+      forecast: forecastData,
+    },
   };
 };
 
