@@ -5,7 +5,22 @@ import { Card, CardContent, CardMedia, Typography } from '@material-ui/core';
 
 const IMG_BASE = process.env.NEXT_PUBLIC_ICONS_BASE_URL;
 
-function ForecastDay({ data }) {
+type WeatherInfo = {
+  icon: string;
+};
+
+type ForecastDayProps = {
+  data: {
+    dt: number;
+    main: {
+      temp: number;
+      feels_like: number;
+    };
+    weather: WeatherInfo[];
+  };
+};
+
+function ForecastDay({ data }: ForecastDayProps) {
   const formattedDay = useMemo(() => {
     const timestamp = data.dt * 1000;
 
