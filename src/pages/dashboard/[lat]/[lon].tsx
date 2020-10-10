@@ -119,23 +119,24 @@ function CurrentWeather({ current, forecast }) {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { lat, lon } = context.query;
 
-  const { data: currentData } = await api.get('weather', {
-    params: {
-      lat,
-      lon,
-      appid: process.env.API_KEY,
-      units: 'imperial',
-    },
-  });
-
-  const { data: forecastData } = await api.get('forecast', {
-    params: {
-      lat,
-      lon,
-      appid: process.env.API_KEY,
-      units: 'imperial',
-    },
-  });
+  const [{ data: currentData }, { data: forecastData }] = await Promise.all([
+    api.get('weather', {
+      params: {
+        lat,
+        lon,
+        appid: process.env.API_KEY,
+        units: 'imperial',
+      },
+    }),
+    api.get('forecast', {
+      params: {
+        lat,
+        lon,
+        appid: process.env.API_KEY,
+        units: 'imperial',
+      },
+    }),
+  ]);
 
   return {
     props: {
