@@ -1,7 +1,7 @@
 module.exports = {
   clearMocks: true,
   coverageReporters: ['lcov', 'text'],
-  testMatch: ['**/__tests__/**/*.test.tsx'],
+  testMatch: ['**/__tests__/**/*.test.(tsx|ts)'],
   coverageDirectory: 'coverage',
 
   moduleNameMapper: {
