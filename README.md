@@ -27,7 +27,7 @@ Due to NextJS SSR capacity, the weather data is loaded and rendered at backend. 
 ## Running app ✨
 
 1. Clone this repo
-2. Run `npm i` or `yarn` to install depencies
+2. Run `npm i` or `yarn` to install dependencies
 3. Create a file called `.env.local` at project root and add the content:
 
 ```
