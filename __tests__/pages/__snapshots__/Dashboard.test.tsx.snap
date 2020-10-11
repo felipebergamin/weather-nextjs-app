@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard screen getServerSideProps should fetch data 1`] = `
+Object {
+  "props": Object {
+    "current": Object {},
+    "forecast": Object {},
+  },
+}
+`;
+
+exports[`Dashboard screen rendered component should match snapshot 1`] = `
+<body>
+  <div>
+    <header
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
+      title="Weather now"
+    >
+      <div
+        class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+      >
+        <h6
+          class="MuiTypography-root MuiTypography-h6"
+        >
+          FoWeather
+        </h6>
+      </div>
+    </header>
+    <div
+      class="MuiContainer-root MuiContainer-maxWidthMd"
+      style="padding-top: 1.5rem; height: 100%;"
+    >
+      <h5
+        class="MuiTypography-root MuiTypography-h5"
+      >
+        Current weather at 
+        City Name
+        , 
+        COUNTRY
+      </h5>
+      <div
+        class="MuiGrid-root MuiGrid-container"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+        >
+          <img
+            alt="ilustrating weather state"
+            draggable="false"
+            src="undefined/04n@4x.png"
+          />
+          <div>
+            <h6
+              class="MuiTypography-root MuiTypography-h6"
+            >
+              Clouds
+            </h6>
+            <p
+              class="MuiTypography-root MuiTypography-body1"
+            >
+              broken clouds
+            </p>
+            <span
+              class="MuiTypography-root MuiTypography-caption"
+            >
+              Humidity 
+              36
+              %
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+        >
+          <h3
+            class="MuiTypography-root MuiTypography-h3"
+          >
+            69.8
+             ℉
+          </h3>
+          <p
+            class="MuiTypography-root MuiTypography-body2"
+          >
+            Min: 
+            69.8
+             ℉ / Max: 
+            69.8
+             ℉
+          </p>
+          <span
+            class="MuiTypography-root MuiTypography-caption"
+          >
+            Feels like 
+            64.26
+             ℉
+          </span>
+        </div>
+      </div>
+      <div
+        class="carousel"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+          >
+            <button
+              aria-label="previous"
+              class="buttonBack___1mlaL carousel__back-button sc-hKFyIo lcbVaY"
+              disabled=""
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-10"
+          >
+            <div
+              aria-live="polite"
+              class="horizontalSlider___281Ls carousel__slider carousel__slider--horizontal"
+              role="listbox"
+              tabindex="0"
+            >
+              <div
+                class="carousel__slider-tray-wrapper carousel__slider-tray-wrap--horizontal"
+              >
+                <ul
+                  class="sliderTray___-vHFQ sliderAnimation___300FY carousel__slider-tray carousel__slider-tray--horizontal"
+                  style="width: 66.66666666666667%; transform: translateX(0%) translateX(0px); flex-direction: row;"
+                >
+                  <li
+                    aria-selected="true"
+                    class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--visible"
+                    role="option"
+                    style="width: 50%; padding-bottom: 60%;"
+                    tabindex="0"
+                  >
+                    <div
+                      class="slideInner___2mfX9 carousel__inner-slide"
+                    >
+                      <div
+                        class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                        style="margin: 0.25rem;"
+                      >
+                        <div
+                          class="MuiCardContent-root"
+                          style="display: flex; flex-direction: column;"
+                        >
+                          <div
+                            class="MuiCardMedia-root"
+                            style="background-image: url(undefined/04n@4x.png); width: 100%; height: 120px; background-size: contain;"
+                          />
+                          <p
+                            class="MuiTypography-root MuiTypography-body1"
+                          >
+                            <strong>
+                              today at 9:00 PM
+                            </strong>
+                          </p>
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            Temperature: 
+                            71.42
+                             ℉
+                          </span>
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            Feels like: 
+                            68.68
+                             ℉
+                          </span>
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            Humidity: 
+                            71.42
+                            %
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="true"
+                    class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--visible"
+                    role="option"
+                    style="width: 50%; padding-bottom: 60%;"
+                    tabindex="0"
+                  >
+                    <div
+                      class="slideInner___2mfX9 carousel__inner-slide"
+                    >
+                      <div
+                        class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                        style="margin: 0.25rem;"
+                      >
+                        <div
+                          class="MuiCardContent-root"
+                          style="display: flex; flex-direction: column;"
+                        >
+                          <div
+                            class="MuiCardMedia-root"
+                            style="background-image: url(undefined/02n@4x.png); width: 100%; height: 120px; background-size: contain;"
+                          />
+                          <p
+                            class="MuiTypography-root MuiTypography-body1"
+                          >
+                            <strong>
+                              tomorrow at 12:00 AM
+                            </strong>
+                          </p>
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            Temperature: 
+                            66.54
+                             ℉
+                          </span>
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            Feels like: 
+                            61.32
+                             ℉
+                          </span>
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            Humidity: 
+                            66.54
+                            %
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+          >
+            <button
+              aria-label="next"
+              class="buttonNext___2mOCa carousel__next-button sc-dlnjPT eZjeJu"
+              disabled=""
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
