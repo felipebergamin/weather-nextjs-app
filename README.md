@@ -2,7 +2,8 @@
 
 - [Foweather 💡](#foweather-)
   - [How to access](#how-to-access)
-  - [Running ✨](#running-)
+  - [Running app ✨](#running-app-)
+  - [Running tests](#running-tests)
   - [Development 💻](#development-)
 
 # Foweather 💡
@@ -23,7 +24,7 @@ Due to NextJS SSR capacity, the weather data is loaded and rendered at backend. 
 
 [Click here](https://foweather.vercel.app/) 😁
 
-## Running ✨
+## Running app ✨
 
 1. Clone this repo
 2. Run `npm i` or `yarn` to install depencies
@@ -35,6 +36,14 @@ API_KEY=PASTE YOUR API KEY HERE
 
 4. Run `npm run dev` or `yarn dev`
 5. Open http://localhost:3000 with your browser
+
+## Running tests
+
+```sh
+npm run test
+# or using yarn
+yarn test
+```
 
 ## Development 💻
 
