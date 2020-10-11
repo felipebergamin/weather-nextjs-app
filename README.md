@@ -1,30 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Table of contents
 
-## Getting Started
+- [Foweather 💡](#foweather-)
+  - [How to access](#how-to-access)
+  - [Running ✨](#running-)
+  - [Development 💻](#development-)
 
-First, run the development server:
+# Foweather 💡
 
-```bash
-npm run dev
-# or
-yarn dev
+This project was created for a job test at Fohat ⚡
+
+It's a Next.JS application that uses [OpenWeather][openweather] to show current and forecast weather data.
+
+The app uses the `navigator.geolocation` service to get user aproximate coordinates and use it to get weather data from [OpenWeather API][openweather].
+
+The free plan of this API only provides forecast data for next 5 days, with 3 hours interval. All this data is shown at a carousel that can be dragged with mouse or fingers (when using touch screen devices).
+
+Due to NextJS SSR capacity, the weather data is loaded and rendered at backend. This protect the API key from leak, since they is never sent to client, and the OpenWeather doesn't provide any way to restrict key usage from unauthorized entities.
+
+**_The browser's geolocation can use the location based on the IP address. Because of this, another city near you may be displayed._**
+
+## How to access
+
+[Click here](https://foweather.vercel.app/) 😁
+
+## Running ✨
+
+1. Clone this repo
+2. Run `npm i` or `yarn` to install depencies
+3. Create a file called `.env.local` at project root and add the content:
+
+```
+API_KEY=PASTE YOUR API KEY HERE
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Run `npm run dev` or `yarn dev`
+5. Open http://localhost:3000 with your browser
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Development 💻
 
-## Learn More
+Libs used:
 
-To learn more about Next.js, take a look at the following resources:
+- @material-ui
+- axios
+- date-fns
+- nextjs
+- pure-react-carousel
+- styled-components
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Tools:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Visual Studio Code
+- Firefox browser
+- OhMyZsh
+- Insomnia
+- KDE Neon 20.04
+- Windows 10 (because a software update broken my KDE 😅)
 
-## Deploy on Vercel
+Computer:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Notebook
+  - CPU: Intel i5-7200U
+  - Memory: 16GB
+  - SSD 240 GB
+  - Dualboot: KDE Neon 20.04 / Windows 10
+  - NVidia 920mx / Intel Graphics
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[openweather]: https://openweathermap.org/
